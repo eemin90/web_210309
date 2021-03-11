@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .note {
+            color: blue;
+        }
+
+        /* h1 요소이면서 class가 note인 항목에 적용 */
+        h1.note {
+            text-decoration: underline;
+        }
+
+        /* p 요소이면서 class가 note인 항목에 적용 */
+        p.note {
+            background-color: yellow;
+        }
+
+        /* p 요소이면서 class가 note이면서 error인 항목에 적용 */
+        h1.note.error {
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="note">Lorem, ipsum dolor.</h1>
+    <h1 class="note error">Magni, deserunt maiores.</h1>
+    <h1>Deserunt, ipsam quam.</h1>
+    <p class="note">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil, aliquid! Veritatis, debitis aspernatur non ipsam quis velit nemo excepturi enim at reiciendis provident praesentium esse voluptatum consectetur similique suscipit obcaecati.</p>
+    <p>Tenetur quo tempora molestiae nemo officiis. Deleniti neque maxime dolorem recusandae eveniet repudiandae dolor, commodi obcaecati. Voluptate molestias repudiandae, nam, cupiditate suscipit rerum facere esse tenetur vitae consequatur natus modi.</p>
+    <p>Aut, ducimus voluptatibus? Eveniet consequatur, provident nostrum dolores sed, sit voluptatem aperiam illum obcaecati non quasi ex, dolore ipsa hic quos quidem soluta doloribus totam molestiae odio temporibus quas cupiditate.</p>
+    <p class="note">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum quam mollitia enim dolor error quas in non. Possimus animi asperiores nobis labore officia, deleniti nam! Fugit recusandae repellat et saepe!</p>
+    <div class="note">Lorem ipsum dolor sit amet.</div>
+</body>
+</html>
