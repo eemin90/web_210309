@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            position: relative;
+        }
+
+        h1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: black;
+            color: white;
+        }
+
+        #div1 > h1 {
+            /* 요소 전체가 투명해짐 */
+            opacity: 0.5;
+        }
+
+        #div2 > h1 {
+            /* 요소 중 배경 색깔만 투명해짐(h1 요소의 투명도는 기본값인 1인 상태) */
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <img src="../html/house.jpg" alt="house">
+        <h1>Lorem, ipsum dolor.</h1>
+    </div>
+
+    <div id="div2">
+        <img src="../html/house.jpg" alt="house">
+        <h1>Lorem, ipsum dolor.</h1>
+    </div>
+</body>
+</html>
