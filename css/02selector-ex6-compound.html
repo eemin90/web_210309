@@ -16,9 +16,14 @@
             background-color: yellow;
         }
 
-        /* p 요소이면서 class가 note이면서 error인 항목에 적용 */
+        /* h1 요소이면서 class가 note이면서 error인 항목에 적용 */
         h1.note.error {
             font-size: 70px;
+        }
+
+        /* h1 요소이거나 class가 note인 항목에 적용 */
+        h1, .note {
+            text-align: center;
         }
     </style>
 </head>

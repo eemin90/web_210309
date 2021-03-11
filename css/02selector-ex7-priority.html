@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /*
+        id: 100점(1,0,0)
+        class: 10점(0,1,0)
+        element: 1점(0,0,1)
+        */
+        /* 같은 우선 순위인 경우는 아래쪽의 코드가 적용 */
+        #header1 {
+            color: gray;
+        }
+        h1.special {
+            color: purple;
+        }
+        h1 {
+            color: red;
+        }
+        .note.special {
+            color: pink;
+        }
+        .note {
+            color: yellow;
+        }
+        .special {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="note">Lorem, ipsum dolor.</h1>
+    <h1 class="note special">Quo, repellendus praesentium.</h1>
+    <h1 class="special">Doloribus, quia aperiam.</h1>
+    <h1 id="header1">Perferendis, eos id.</h1>
+    <h1>Ratione, ab officia.</h1>
+</body>
+</html>
