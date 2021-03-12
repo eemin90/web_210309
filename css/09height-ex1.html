@@ -9,10 +9,37 @@
         width: 300px;
         height: 200px;
     }
+    #div2 {
+        height: 200px;
+        /* 부모 요소의 너비 기준 */
+        width: 50%;
+    }
+    #div3 {
+        /* 전체 크기는 border 상하좌우 각각 50px, width 300px, height 200px이므로, */
+        /* 너비 400px, 높이 300px가 된다*/
+        border: 50px solid green;
+        width: 300px;
+        height: 200px;
+    }
+    #div4 {
+        /* box-sizing특성의 값이 border-box로 설정되어 있기 때문에 padding과 border값이 포함됨 */
+        /* 따라서, border의 크기가 50px이므로 설정한 width값과 height값에서 상하좌우 50px씩 잡아먹게되어, */
+        /* width값은 200px, height값은 100px가 된다 */
+        box-sizing: border-box;
+        border: 50px solid green;
+        width: 300px;
+        height: 200px;
+    }
+    #div5 {
+        border-width: 0px;
+        width: 300px;
+        height: 200px;
+        background-color: yellow;
+    }
 </style>
 </head>
 <body>
-    <!-- (div$+hr)*5 -->
+    <!-- (#div$+hr)*5 -->
     <div id="div1"></div>
     <hr>
     <div id="div2"></div>
