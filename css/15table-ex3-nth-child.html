@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /* p 의 첫번째 자식 */
+    p:nth-child(1) {
+        background-color: blue;
+    }
+    p:nth-child(2) {
+        background-color: green;
+    }
+
+    /* p의 홀수 자식 */
+    p:nth-child(odd) {
+        text-decoration: underline;
+    }
+
+    /* p의 짝수 자식 */
+    p:nth-child(even) {
+        font-weight: bold;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        height: 30px;
+    }
+
+    tr:nth-child(odd) {
+        background-color: hotpink;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, ea quam. Officiis amet, deserunt nemo debitis autem ducimus vel cum quia at, earum accusantium voluptatem architecto hic provident quo distinctio.</p>
+        <p>Earum ratione consequatur nemo unde laborum totam aliquid repellat, nisi ipsum nostrum, reiciendis suscipit fugiat id, quae sint. Quo vitae autem minima, necessitatibus neque sit itaque tenetur assumenda praesentium vero.</p>
+        <p>Tempore deleniti facilis voluptatem ipsam nostrum, fuga, vitae, iste assumenda obcaecati numquam accusantium optio veniam illo. Commodi unde, sapiente debitis molestias enim aliquam rem quidem ratione, quaerat labore facere repellendus.</p>
+        <p>Commodi vero, nemo fuga quidem dolor quae in asperiores nesciunt blanditiis illo, eius, alias nobis repellendus reiciendis enim dignissimos voluptate eum eveniet error quo consequuntur! Iste repellat aliquam eum autem.</p>
+        <p>Odio quis omnis cum, earum nulla ea quae officiis? Architecto labore quod quos placeat, dolor culpa at sit consequatur, non ab dolorem aut provident itaque, illo expedita! Dolorem, blanditiis voluptatem?</p>
+    </div>
+
+    <table>
+        <tr>
+            <th>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis optio praesentium inventore ad, minima eligendi soluta quae aspernatur est quia. Repudiandae quibusdam dolor molestias adipisci voluptatem est itaque magni aspernatur.</th>
+            <th>Enim ducimus delectus in maxime amet consectetur, aliquam cupiditate sint voluptatibus distinctio, placeat voluptas et esse cum consequatur! Perferendis, illo? Nihil voluptatibus dolorem quod omnis illo rerum voluptatum praesentium temporibus!</th>
+            <th>Quam quae, odit possimus fuga mollitia aperiam adipisci quos reiciendis cum aliquid reprehenderit consectetur obcaecati, tempore architecto itaque labore culpa temporibus neque nostrum recusandae. Dolorem reiciendis libero eius autem rem?</th>
+        </tr>
+        <tr>
+            <td>Lorem.</td>
+            <td>Ea.</td>
+            <td>Explicabo.</td>
+        </tr>
+        <tr>
+            <td>Lorem.</td>
+            <td>Fugiat?</td>
+            <td>Error?</td>
+        </tr>
+        <tr>
+            <td>Lorem.</td>
+            <td>Harum?</td>
+            <td>Explicabo.</td>
+        </tr>
+        <tr>
+            <td>Lorem.</td>
+            <td>Eligendi.</td>
+            <td>Et.</td>
+        </tr>
+    </table>
+</body>
+</html>
