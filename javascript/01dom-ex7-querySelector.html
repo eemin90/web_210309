@@ -6,9 +6,12 @@
 </style>
 </head>
 <body>
-    <h1 class="header">Lorem.</h1>
-    <h1 class="header para">Beatae!</h1>
-    <h1 class="header para">Rerum.</h1>
+    <div>
+        <h1 class="header">Lorem.1</h1>
+        <h1 class="header para">Beatae!2</h1>
+        <h1 id="para">Lorem.3</h1>
+        <h1 class="header para">Rerum.4</h1>
+    </div>
 
     <script>
         var x = document.querySelector(".header");
@@ -17,8 +20,14 @@
         var y = document.querySelector(".para");
         console.log(y.innerHTML);
 
-        var z = document.querySelector("h1:nth-child(3)");
+        var yy = document.querySelector("#para");
+        console.log(yy.innerHTML);
+
+        var z = document.querySelector("h1:nth-child(4)");
         console.log(z.innerHTML);
+
+        var zz = document.querySelector("div > #para");
+        console.log(zz.innerHTML);
     </script>
 </body>
 </html>
