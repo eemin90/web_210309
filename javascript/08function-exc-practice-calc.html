@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+    .numbutton, .dividebutton, .timesbutton, .minusbutton, .plusbutton {
+        padding: 22px;
+    }
+
+
+</style>
+</head>
+<body>
+    <!-- 연산 결과 창 -->
+    <input type="text" id="result" readonly>
+    <p id="collect"></p>
+    <br>
+
+    <!-- 계산기 버튼 -->
+    <button onclick="collect()" id="button7" class="numbutton">7</button>
+    <button onclick="collect()" id="button8" class="numbutton">8</button>
+    <button onclick="collect()" id="button9" class="numbutton">9</button>
+    <button class="dividebutton"><i class="fas fa-divide"></i></button>
+    
+    <br>
+    <button onclick="collect()" id="button4" class="numbutton">4</button>
+    <button onclick="collect()" id="button5" class="numbutton">5</button>
+    <button onclick="collect()" id="button6" class="numbutton">6</button>
+    <button class="timesbutton"><i class="fas fa-times"></i></button>
+    <br>
+    <button onclick="collect()" id="button1" class="numbutton">1</button>
+    <button onclick="collect()" id="button2" class="numbutton">2</button>
+    <button onclick="collect()" id="button3" class="numbutton">3</button>
+    <button class="minusbutton"><i class="fas fa-minus"></i></button>
+    <br>
+    <button onclick="collect()" id="button0" class="numbutton" style="width: 178px;">0</button>
+    <button class="plusbutton"><i class="fas fa-plus"></i></button>
+    <br>
+    <button onclick="processResult()" id="button0" class="result">＝</button>
+
+    <script>
+        // 값을 계산
+        function divide(a, b) {
+            return a / b;
+        }
+        function times(a, b) {
+            return a * b;
+        }
+        function minus(a, b) {
+            return a - b;
+        }
+        function plus(a, b) {
+            return a + b;
+        }
+
+        // 숫자 값을 모음
+        function collect() {
+            var collector = 0;
+            
+            if (document.getElementsByClassName("numbutton").innerText == 1) {
+                collector += 1;
+            }            
+            
+            console.log(collector);
+        }
+
+        // 결과 값 계산 실행
+        function processResult() {
+            document.getElementById("result").value;
+        }
+        </script>
+</body>
+</html>

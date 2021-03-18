@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <input type="text" id="input1">
+    <br>
+    <input type="text" id="input2">
+    <br>
+    <!-- 5. 클릭하면 결과 값 출력됨 -->
+    <button onclick="process()"><i class="fas fa-plus"></i></button>
+    <br>
+    <input type="text" id="result" readonly>
+
+    <script>
+        // 3-2. 값 2개를 숫자 자료형으로 변환시키고(a와 b의 받아온 값은 둘다 String자료형 이기 때문에) 더한 값을 반환
+        function add(param1, param2) {
+            return Number(param1) + Number(param2);
+        }
+
+        function process() {
+            // 1. id가 input1인 요소의 value값을 받아와서 a 변수에 대입
+            var a = document.getElementById("input1").value;
+            // 2. id가 input2인 요소의 value값을 받아와서 b 변수에 대입
+            var b = document.getElementById("input2").value;
+
+            // 3-1. add 함수를 통해 a와 b 값을 전달하고
+            // 3-3. 반환받은 값을 c 변수에 대입
+            var c = add(a, b);
+            // 4. c 변수에 대입된 값을 id가 result인 요소의 value에 대입
+            document.getElementById("result").value = c;
+            
+        }
+    </script>
+</body>
+
+</html>
