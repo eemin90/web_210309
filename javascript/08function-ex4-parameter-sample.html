@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <script src="../css/all.min.js"></script>
+    <link rel="stylesheet" href="../css/all.min.css">
     <style>
         #icon1 {
             font-size: 50px;
@@ -11,13 +11,22 @@
 </head>
 
 <body>
-    <input type="text" id="input1">
+    <input onkeyup="changeCall()" type="text" id="input1">
     <div><i id="icon1" class="fas fa-heart"></i></div>
 
     <script>
+        function changeCall() {
+            var v = document.getElementById("input1").value;
+            // id가 input1인 input요소에 입력한 값을 var v 변수에 담아서,
+            // v 변수의 값을 아래 change함수의 parameter값에 전달
+            change(v);
+        }
+
+        // 전달받은 v 변수의 값이 iconName, 즉 id가 icon1인 요소의 class name이 전달받은 v 변수의 값으로 바뀜
         function change(iconName) {
             document.getElementById("icon1").className = iconName;
         }
+       
     </script>
 </body>
 
