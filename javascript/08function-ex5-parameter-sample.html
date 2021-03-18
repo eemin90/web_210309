@@ -7,9 +7,25 @@
 </style>
 </head>
 <body>
-    <button1></button1>
-    <button2></button2>
-    <button3></button3>
-    <button4></button4>
+    <!-- <button onclick="changeImage(document.getElementById('button1'))" id="button1">orange</button> -->
+    <!-- changeImage함수의 argument로 입력한 this 라는것은 위 주석 내용과 같다 -->
+    <button onclick="changeImage(this)" id="button1">orange</button>
+    <button onclick="changeImage(this)" id="button2">tangerine</button>
+    <button onclick="changeImage(this)" id="button3">tomato</button>
+    <button onclick="changeImage(this)" id="button4">watermelon</button>
+    <!-- 1. 버튼을 클릭할 때(onclick) changeImage함수가 호출됨 -->
+
+    <hr>
+    <img src="" alt="" id="img1">
+
+    <script>
+        // 2. 버튼을 클릭했을 때 호출된 changeImage(this)에 해당하는 값(document.getElementById="누른 버튼의 id값")이 아래 params에 들어가서,
+        // 3. 결과값은 id가 img1인 요소의 src값이 params.innerHTML + ".jpg"로 변경됨
+        //    (예를들어 orange 버튼을 눌렀을때 받게되는 params.innerHTML값은 orange이기 때문에 orange.jpg 라는 값이 src에 대체된다)
+        function changeImage(params) {
+            console.log(params);
+            document.getElementById("img1").src = params.innerHTML + ".jpg";            
+        }
+    </script>
 </body>
 </html>
