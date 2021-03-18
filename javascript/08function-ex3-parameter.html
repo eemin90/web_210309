@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+    
+    <script>
+        // parameter: 매개 변수, 인자, 인수
+        function func1(params) {
+            console.log("func1 function");
+            console.log(params);
+        }
+
+        // argument: 매개 값, 인자, 인수
+        func1(99);
+
+        // parameter는 0개 이상 가능
+        function func2() {
+            console.log("func2 function");
+        }
+
+        func2(88);
+
+        function func3(param1, param2) {
+            console.log("func3 function");
+            console.log(param1, param2);
+        }
+
+        func3(77); // parameter값이 2개일땐 2개 맞춰서 넣지않으면 출력 안됨
+        func3(66, 55); // 66 55
+        func3(55, "donald"); // 55 "donald"
+        func3(); // 값을 정의하지 않았기 때문에 undefined undefined
+    </script>
+</body>
+</html>

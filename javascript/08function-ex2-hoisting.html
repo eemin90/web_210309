@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+
+        // hoisting(게양) 되어 myFunc함수가 호출됨
+        myFunc();
+
+        function myFunc(params) {
+            console.log("abc");
+        }
+
+        func2();
+        // 변수에 함수를 할당. 이 경우는 hoisting 되지 않음.
+        var func2 = function (params) {
+            console.log("no name");
+        }
+
+    </script>
+</body>
+
+</html>
