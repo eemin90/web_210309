@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- <button onclick="changeImage(document.getElementById('button1'))" id="button1">orange</button> -->
-    <!-- changeImage함수의 argument로 입력한 this 라는것은 위 주석 내용과 같다 -->
+    <!-- changeImage함수의 argument로 입력한 this 라는것은 위 주석 내용과 같다(button element) -->
     <button onclick="changeImage(this)" id="button1">orange</button>
     <button onclick="changeImage(this)" id="button2">tangerine</button>
     <button onclick="changeImage(this)" id="button3">tomato</button>
@@ -24,6 +24,7 @@
         //    (예를들어 orange 버튼을 눌렀을때 받게되는 params.innerHTML값은 orange이기 때문에 orange.jpg 라는 값이 src에 대체된다)
         function changeImage(params) {
             console.log(params);
+            alert(params);
             document.getElementById("img1").src = params.innerHTML + ".jpg";            
         }
     </script>
