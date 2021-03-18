@@ -7,6 +7,28 @@
 </style>
 </head>
 <body>
-    
+
+    <script>
+        function myFunc() {
+            console.log("abc");
+            console.log("def");
+            
+            // return에서 함수가 종료됨
+            return;
+
+            // 함수가 종료되어 실행되지 않음
+            console.log("ghi");
+        }
+
+        function myFunc2() { // 777이 return되어 myFunc2의 값은 777이 됨
+            console.log("abc");
+            console.log("def");
+
+            // return의 역할
+            // 1. 함수 종료
+            // 2. 키워드 오른쪽 값을 호출한 곳으로 반환(return)
+            return 777;
+        }
+    </script>
 </body>
 </html>
