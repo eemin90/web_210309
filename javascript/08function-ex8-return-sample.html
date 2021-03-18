@@ -7,18 +7,29 @@
 </style>
 </head>
 <body>
+    <!-- 값을 입력할 input element 생성 -->
+    <!-- 1. 값 입력 -->
     <input onkeyup="callDouble()" type="text" id="input1">
 
+    <!-- 결과값을 출력할 p element 생성 -->
+    <!-- 5. 결과물이 여기에 출력 됨 -->
     <p id="result"></p>
     
     <script>
+        // 입력한 값을 2배로 해줄 함수 생성
+        // 3-2. 값을 2배로 하여 반환
         function double(v) {
             return v * 2;
         }
 
+        // 
         function callDouble() {
+            // 2. id가 input1인 요소의 값을 가져와서 a 변수에 넣음
             var a = document.getElementById("input1").value;
+            // 3-1. 위의 double함수를 이용하여 a의 값을 2배로 함
+            // 3-3. 그 값을 r 변수에 넣음
             var r = double(a);
+            // 4. id가 result인 요소의 content에 r 변수의 값을 넣음
             document.getElementById("result").innerHTML = r;
         }
     </script>
