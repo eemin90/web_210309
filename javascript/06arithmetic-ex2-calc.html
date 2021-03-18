@@ -23,6 +23,11 @@
         function add() {
             var a = document.getElementById("input1").value;
             var b = document.getElementById("input2").value;
+            
+            // 자료형 변환을 하여 각각 변수 a와 b에 대입하거나, 아래 주석처럼 자료형 변환한 값을 바로 입력해도 됨
+            var a = Number(a);
+            var b = Number(b);
+            // document.getElementById("result").innerHTML = Number(a) + Number(b);
             document.getElementById("result").innerHTML = a + b;
         }
         function minus() {
