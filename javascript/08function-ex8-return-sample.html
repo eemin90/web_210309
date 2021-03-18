@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+
+</style>
+</head>
+<body>
+    <input onkeyup="callDouble()" type="text" id="input1">
+
+    <p id="result"></p>
+    
+    <script>
+        function double(v) {
+            return v * 2;
+        }
+
+        function callDouble() {
+            var a = document.getElementById("input1").value;
+            var r = double(a);
+            document.getElementById("result").innerHTML = r;
+        }
+    </script>
+</body>
+</html>
