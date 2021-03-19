@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+
+</style>
+</head>
+<body>
+
+    <script>
+        // indexOf
+        var str = "Lorem ipsum dolor sit amet.";
+        var idx = str.indexOf("ipsum");
+
+        console.log(idx); // 6
+
+        // slice
+        var res = str.slice(12, 17); // (12번째 부터 16번째 까지)
+        console.log(res); // dolor
+        console.log(str.slice(12)); // dolor sit amet.
+
+        // substring
+        var res2 = str.substring(12, 17); // (12번째 부터 16번째 까지)
+        console.log(res2); // dolor
+        console.log(str.substring(12)); // dolor sit amet.
+
+        // substr
+        var res3 = str.substr(12, 5); // (12번째 부터, 뒤에 있는 4번째 까지)
+        console.log(res3); // dolor
+        console.log(str.substr(12)); // dolor sit amet.
+    </script>
+</body>
+</html>

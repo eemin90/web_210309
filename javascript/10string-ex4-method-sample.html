@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+
+</style>
+</head>
+<body>
+    <!-- 1. 입력할 곳 생성 -->
+    <input type="text" id="input1">
+    <br>
+
+    <!-- 2. 분리시킬 버튼 생성 -->
+    <!-- 클릭할때 split 함수 호출 -->
+    <button onclick="split()">분리</button>
+
+    <!-- 3. 분리한 앞자리 표시할 곳 생성 -->
+    <p>앞자리: <span id="span1"></span></p>
+    <!-- 4. 분리한 뒷자리 표시할 곳 생성 -->
+    <p>뒷자리: <span id="span2"></span></p>
+
+    <script>
+        // 5. 분리시킬 함수 생성
+        function split() {
+            // 6. id가 input1인 요소에 입력한 값을 full 함수에 대입
+            var full = document.getElementById("input1").value;
+            // 7. 분리시킬 위치 지정을 위해 full 함수에 대입한 값 중,
+            //    "-" 문자 위치를 지정하여 minusIndex 함수에 대입
+            var minusIndex = full.indexOf("-");
+            
+            // "-" 문자 왼쪽의 텍스트 분리
+            // 8. full 함수에 대입한 값에서 substring 메소드 이용하여,
+            //    첫 글자(0번째)부터 minusIndex 변수("-" 문자)값 전까지 분리하여 left 함수에 대입
+            var left = full.substring(0, minusIndex);
+            // "-" 문자 오른쪽의 텍스트 분리
+            // 9. full 함수에 대입한 값에서 substring 메소드 이용하여,
+            //    minusIndex 변수("-" 문자)값 바로 다음 글자부터 마지막 글자까지 분리하여 right 함수에 대입
+            var right = full.substring(minusIndex + 1);
+            // 10. left 변수의 값을 id가 span1인 요소의 content에 대입
+            document.getElementById("span1").innerHTML = left;
+            // 11. right 변수의 값을 id가 span2인 요소의 content에 대입
+            document.getElementById("span2").innerHTML = right;
+        }
+    </script>
+</body>
+</html>
