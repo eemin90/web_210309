@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" href="../css/all.min.css">
-<style>
-    .result {
-        width: 100px;
-        height: 100px;
-        background-color: black;
-        border-radius: 50%;
-        line-height: 100px;
-        text-align: center;
-        color: white;
-        font-weight: bold;
-    }
-</style>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .result {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border-radius: 50%;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
 </head>
+
 <body>
     <button onclick="lotto()">번호 추첨</button>
-
-    <div class="result"></div>
-    <div class="result"></div>
-    <div class="result"></div>
-    <div class="result"></div>
-    <div class="result"></div>
-    <div class="result"></div>
+    <div class="container">
+        <div class="result"></div>
+        <div class="result"></div>
+        <div class="result"></div>
+        <div class="result"></div>
+        <div class="result"></div>
+        <div class="result"></div>
+    </div>
 
     <script>
+        
         function lotto() {
             var elems = document.getElementsByClassName("result");
 
@@ -37,8 +46,9 @@
             // elems[5] = Math.floor(Math.random() * 45) + 1;
             for (var i = 0; i < 6; i++) {
                 elems[i].innerHTML = Math.floor(Math.random() * 45) + 1;
-            }            
+            }
         }
     </script>
 </body>
+
 </html>
