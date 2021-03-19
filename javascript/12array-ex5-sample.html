@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+
+</style>
+</head>
+<body>
+
+    <script>
+
+        lotto();
+
+        function lotto() {
+            // 로또 번호를 담을 빈 배열 생성
+            var balls = [];
+
+            // balls 배열의 길이가 6 미만인 동안(0 ~ 5)에 반복
+            while (balls.length < 6) {
+                // 생성한 번호를 newNumber 변수에 대입
+                var newNumber = getNum();
+                // balls 배열에 대입된 번호(newNumber)가 중복값이 아닐 경우에
+                if (!balls.includes(newNumber)) {
+                    // balls 배열에 대입된 번호(newNumber)를 추가(배열 push 메소드)
+                    balls.push(newNumber);
+                    // if문이 끝나고 다시 while문으로 돌아가서 반복(while문의 조건이 충족되서 멈추기 전까지)
+                }
+            }
+
+            // 위 while문의 조건이 끝나고 나서 balls 배열에 대입된 값들을 가지고
+            // 아래 괄호 안의 i값이 6 미만인 동안(0 ~ 5)에 반복
+            // 반복할 내용은 console.log를 이용하여 balls 배열에 대입된 값들을 출력(i값이 0~5가 되기 때문에 balls[i]는 balls[0]부터 balls[5]까지)
+            for (var i = 0; i < 6; i++) {
+               console.log(balls[i]);
+            }
+        }
+
+        // 번호 생성
+        function getNum() {
+            return Math.floor(Math.random() * 45) + 1;
+        }
+
+    </script>
+</body>
+</html>
