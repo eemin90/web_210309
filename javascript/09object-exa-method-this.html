@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+
+</style>
+</head>
+<body>
+
+    <script>
+        function start() {
+            console.log(this.name + "출발");
+        }
+        var car = {
+            name: "fiat",
+            start: start
+        };
+        var car2 = {
+            name: "volvo",
+            start: start
+        };
+
+        car.start();  // fiat출발
+        car2.start(); // volvo출발
+    </script>
+</body>
+</html>
