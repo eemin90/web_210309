@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+    #result1 {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        border-radius: 50%;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    #result2 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 50%;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    #result3 {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        border-radius: 50%;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    #result4 {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        border-radius: 50%;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    #result5 {
+        width: 100px;
+        height: 100px;
+        background-color: hotpink;
+        border-radius: 50%;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    #result6 {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        border-radius: 50%;
+        line-height: 100px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <button onclick="randomNumber()">번호 뽑기</button>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+    <div id="result4"></div>
+    <div id="result5"></div>
+    <div id="result6"></div>
+
+    <script>
+        function randomNumber() {
+            // 1 ~ 45 값을 6개
+            var ran1 = Math.floor(Math.random() * 45) + 1;
+            var ran2 = Math.floor(Math.random() * 45) + 1;
+            var ran3 = Math.floor(Math.random() * 45) + 1;
+            var ran4 = Math.floor(Math.random() * 45) + 1;
+            var ran5 = Math.floor(Math.random() * 45) + 1;
+            var ran6 = Math.floor(Math.random() * 45) + 1;
+            document.getElementById("result1").innerHTML = ran1;
+            document.getElementById("result2").innerHTML = ran2;
+            document.getElementById("result3").innerHTML = ran3;
+            document.getElementById("result4").innerHTML = ran4;
+            document.getElementById("result5").innerHTML = ran5;
+            document.getElementById("result6").innerHTML = ran6;
+        }
+    </script>
+</body>
+</html>
