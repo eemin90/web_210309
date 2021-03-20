@@ -8,6 +8,10 @@
         .calcbutton {
             padding: 22px;
         }
+
+        #result {
+            width: 235px;
+        }
     </style>
 </head>
 
@@ -15,6 +19,7 @@
     <!-- 연산 결과 창 -->
     <input type="text" id="result" readonly>
     <p id="collect" hidden></p>
+    <p id="collect1" hidden></p>
     <br>
 
     <!-- 계산기 버튼 -->
@@ -204,7 +209,7 @@
             if (collector1[collector1.length - 1] == "/") {
                 // divide
                 console.log(collector[0]);
-                document.getElementById("result").value = divide(collector, collector2); // 값 계산할때 어떻게 할지 고민해야 함
+                document.getElementById("result").value = divide(collector, collector2); // 값 계산할때 어떻게 할지 고민해야 함. 위에 p 요소 2개에 담은걸로 계산할지??
             }
             if (collector1[collector1.length - 1] == "*") {
                 // times
