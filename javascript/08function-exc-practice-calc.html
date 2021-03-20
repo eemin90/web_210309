@@ -1,73 +1,225 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" href="../css/all.min.css">
-<style>
-    .numbutton, .dividebutton, .timesbutton, .minusbutton, .plusbutton {
-        padding: 22px;
-    }
-
-
-</style>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+        .numbutton,
+        .calcbutton {
+            padding: 22px;
+        }
+    </style>
 </head>
+
 <body>
     <!-- 연산 결과 창 -->
     <input type="text" id="result" readonly>
-    <p id="collect"></p>
+    <p id="collect" hidden></p>
     <br>
 
     <!-- 계산기 버튼 -->
-    <button onclick="collect()" id="button7" class="numbutton">7</button>
-    <button onclick="collect()" id="button8" class="numbutton">8</button>
-    <button onclick="collect()" id="button9" class="numbutton">9</button>
-    <button class="dividebutton"><i class="fas fa-divide"></i></button>
-    
+    <button onclick="btn7()" id="button7" class="numbutton">7</button>
+    <button onclick="btn8()" id="button8" class="numbutton">8</button>
+    <button onclick="btn9()" id="button9" class="numbutton">9</button>
+    <button onclick="btndivide()" id="dividebutton" class="calcbutton"><i class="fas fa-divide"></i></button>
+
     <br>
-    <button onclick="collect()" id="button4" class="numbutton">4</button>
-    <button onclick="collect()" id="button5" class="numbutton">5</button>
-    <button onclick="collect()" id="button6" class="numbutton">6</button>
-    <button class="timesbutton"><i class="fas fa-times"></i></button>
+    <button onclick="btn4()" id="button4" class="numbutton">4</button>
+    <button onclick="btn5()" id="button5" class="numbutton">5</button>
+    <button onclick="btn6()" id="button6" class="numbutton">6</button>
+    <button onclick="btntimes()" id="timesbutton" class="calcbutton"><i class="fas fa-times"></i></button>
     <br>
-    <button onclick="collect()" id="button1" class="numbutton">1</button>
-    <button onclick="collect()" id="button2" class="numbutton">2</button>
-    <button onclick="collect()" id="button3" class="numbutton">3</button>
-    <button class="minusbutton"><i class="fas fa-minus"></i></button>
+    <button onclick="btn1()" id="button1" class="numbutton">1</button>
+    <button onclick="btn2()" id="button2" class="numbutton">2</button>
+    <button onclick="btn3()" id="button3" class="numbutton">3</button>
+    <button onclick="btnminus()" id="minusbutton" class="calcbutton"><i class="fas fa-minus"></i></button>
     <br>
-    <button onclick="collect()" id="button0" class="numbutton" style="width: 178px;">0</button>
-    <button class="plusbutton"><i class="fas fa-plus"></i></button>
+    <button onclick="btn0()" id="button0" class="numbutton" style="width: 178px;">0</button>
+    <button onclick="btnplus()" id="plusbutton" class="calcbutton"><i class="fas fa-plus"></i></button>
     <br>
-    <button onclick="processResult()" id="button0" class="result">＝</button>
+    <button onclick="processResult()" id="resultbtn" class="calcbutton"><i class="fas fa-equals"></i></button>
 
     <script>
+        // 숫자 값을 모음
+        var collector = [];
+        var collector1 = [];
+        var collector2 = [];
+
         // 값을 계산
         function divide(a, b) {
-            return a / b;
+            console.log(Number(a));
+            console.log(Number(b));
+            return Number(a) / Number(b);
         }
         function times(a, b) {
-            return a * b;
+            console.log(a);
+            console.log(Number(b));
+            return Number(a) * Number(b);
         }
         function minus(a, b) {
-            return a - b;
+            console.log(Number(a));
+            console.log(Number(b));
+            return Number(a) - Number(b);
         }
         function plus(a, b) {
-            return a + b;
+            console.log(Number(a));
+            console.log(Number(b));
+            return Number(a) + Number(b);
         }
 
-        // 숫자 값을 모음
-        function collect() {
-            var collector = 0;
-            
-            if (document.getElementsByClassName("numbutton").innerText == 1) {
-                collector += 1;
-            }            
-            
-            console.log(collector);
+        // 버튼 눌렀을 때 값을 넣음
+        function btn0() {
+            if (collector1.length >= 1) {
+                collector2.push(0);
+            } else {
+                collector.push(0);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btn1() {
+            if (collector1.length >= 1) {
+                collector2.push(1);
+            } else {
+                collector.push(1);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btn2() {
+            if (collector1.length >= 1) {
+                collector2.push(2);
+            } else {
+                collector.push(2);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btn3() {
+            if (collector1.length >= 1) {
+                collector2.push(3);
+            } else {
+                collector.push(3);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btn4() {
+            if (collector1.length >= 1) {
+                collector2.push(4);
+            } else {
+                collector.push(4);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btn5() {
+            if (collector1.length >= 1) {
+                collector2.push(5);
+            } else {
+                collector.push(5);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btn6() {
+            if (collector1.length >= 1) {
+                collector2.push(6);
+            } else {
+                collector.push(6);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btn7() {
+            if (collector1.length >= 1) {
+                collector2.push(7);
+            } else {
+                collector.push(7);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btn8() {
+            if (collector1.length >= 1) {
+                collector2.push(8);
+            } else {
+                collector.push(8);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btn9() {
+            if (collector1.length >= 1) {
+                collector2.push(9);
+            } else {
+                collector.push(9);
+            }
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
         }
 
-        // 결과 값 계산 실행
+        function btndivide() {
+            collector1.push("/");
+
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btntimes() {
+            collector1.push("*");
+
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btnminus() {
+            collector1.push("-");
+
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+        function btnplus() {
+            collector1.push("+");
+
+            console.log("col: " + collector);
+            console.log("col1: " + collector1);
+            console.log("col2: " + collector2);
+        }
+
+        // 계산 실행
         function processResult() {
-            document.getElementById("result").value;
+            // "/, *, -, +" 버튼 중 제일 마지막에 누른 버튼의 값으로 계산 실행
+            if (collector1[collector1.length - 1] == "/") {
+                // divide
+                console.log(collector[0]);
+                document.getElementById("result").value = divide(collector, collector2); // 값 계산할때 어떻게 할지 고민해야 함
+            }
+            if (collector1[collector1.length - 1] == "*") {
+                // times
+                document.getElementById("result").value = times(collector, collector2);
+            }
+            if (collector1[collector1.length - 1] == "-") {
+                // minus
+                document.getElementById("result").value = minus(collector, collector2);
+            }
+            if (collector1[collector1.length - 1] == "+") {
+                // plus
+                document.getElementById("result").value = plus(collector, collector2);
+            }
         }
-        </script>
+    </script>
 </body>
+
 </html>
