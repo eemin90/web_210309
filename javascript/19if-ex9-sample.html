@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+
+</style>
+</head>
+<body>
+    <input type="text">
+    <button onclick="add()"><i class="fas fa-plus"></i></button>
+
+    <ul id="result"></ul>
+
+    <script>
+        function add() {
+            var txt = document.querySelector("input").value;
+            var ul = document.getElementById("result");
+            
+            txt = txt.trim();
+
+            if (!txt) {
+                alert("내용을 입력하세요.");
+            // } else if (txt.includes(" ")) {
+            //     alert("공백 입력 불가");
+            // } else if (txt.indexOf(" ") == 0 || txt.lastIndexOf(" ") ) { // 고민해볼것!!
+            //     alert("공백 입력 불가");
+            } else {
+                ul.innerHTML += "<li>" + txt + "</li>";
+            }
+        }
+    </script>
+</body>
+</html>
