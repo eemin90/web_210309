@@ -17,14 +17,12 @@
             var txt = document.querySelector("input").value;
             var ul = document.getElementById("result");
             
-            txt = txt.trim();
-
-            if (!txt) {
+            // 공백일 경우
+            if (!txt) {                
                 alert("내용을 입력하세요.");
-            // } else if (txt.includes(" ")) {
-                // alert("공백 입력 불가");
-            // } else if (txt.indexOf(" ") == 0 || txt.lastIndexOf(" ") == txt[txt.length - 1]) { // 고민해볼것!!
-            //     alert("앞,뒤 공백 입력은 불가합니다.");
+            // 완성!!! (앞 공백이 있거나 맨뒤 공백이 있으면 alert()으로 경고)
+            } else if (txt.indexOf(" ") == 0 || txt.lastIndexOf(" ") == txt.length - 1) {
+                alert("앞,뒤 공백 입력은 불가합니다.");
             // } else if (txt.trim()) {
             //     alert("앞,뒤 공백 입력은 불가합니다.(앞,뒤 공백은 제거되어 추가됩니다)");
             } else {
