@@ -22,9 +22,11 @@
             if (!txt) {
                 alert("내용을 입력하세요.");
             // } else if (txt.includes(" ")) {
-            //     alert("공백 입력 불가");
-            // } else if (txt.indexOf(" ") == 0 || txt.lastIndexOf(" ") ) { // 고민해볼것!!
-            //     alert("공백 입력 불가");
+                // alert("공백 입력 불가");
+            // } else if (txt.indexOf(" ") == 0 || txt.lastIndexOf(" ") == txt[txt.length - 1]) { // 고민해볼것!!
+            //     alert("앞,뒤 공백 입력은 불가합니다.");
+            // } else if (txt.trim()) {
+            //     alert("앞,뒤 공백 입력은 불가합니다.(앞,뒤 공백은 제거되어 추가됩니다)");
             } else {
                 ul.innerHTML += "<li>" + txt + "</li>";
             }
