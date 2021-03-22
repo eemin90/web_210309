@@ -210,16 +210,13 @@
                 // divide
                 console.log(collector[0]);
                 document.getElementById("result").value = divide(collector, collector2); // 값 계산할때 어떻게 할지 고민해야 함. 위에 p 요소 2개에 담은걸로 계산할지??
-            }
-            if (collector1[collector1.length - 1] == "*") {
+            } else if (collector1[collector1.length - 1] == "*") {
                 // times
                 document.getElementById("result").value = times(collector, collector2);
-            }
-            if (collector1[collector1.length - 1] == "-") {
+            } else if (collector1[collector1.length - 1] == "-") {
                 // minus
                 document.getElementById("result").value = minus(collector, collector2);
-            }
-            if (collector1[collector1.length - 1] == "+") {
+            } else if (collector1[collector1.length - 1] == "+") {
                 // plus
                 document.getElementById("result").value = plus(collector, collector2);
             }
