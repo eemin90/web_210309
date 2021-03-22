@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+    button {
+        font-size: 50px;
+    }
+
+    div {
+        font-size: 20px;
+    }
+
+    /* .container {
+        display: flex;
+    } */
+</style>
+</head>
+<body>
+    <button onclick="game(1)"><i class="fas fa-hand-rock"></i></button>
+    <button onclick="game(2)"><i class="fas fa-hand-scissors fa-rotate-90"></i></button>
+    <button onclick="game(3)"><i class="fas fa-hand-paper"></i></button>
+    
+    <div class="container">
+        user<div class="user"></div>
+        <div>&nbsp;VS&nbsp;</div>
+        computer<div class="computer"></div>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        function game(user) {
+            // 1: 바위, 2: 가위, 3: 보
+            var computer = Math.floor(Math.random() * 3) + 1;
+
+            setIcon(user, document.querySelector(".user"));
+            setIcon(computer, document.querySelector(".computer"));
+
+            var resultText = "";
+            if (user == computer) {
+                resultText = "비겼습니다.";
+            } else if (user == 1 && computer == 2) {
+                resultText = "이겼습니다.";
+            } else if (user == 2 && computer == 3) {
+                resultText = "이겼습니다.";
+            } else if (user == 3 && computer == 1) {
+                resultText = "이겼습니다.";
+            } else {
+                resultText = "졌습니다.";
+            }
+
+            document.getElementById("result").innerHTML = "<br>" + "결과: " + resultText;
+        }
+
+        function setIcon(hand, elem) {
+            switch (hand) {
+                case 1:
+                    elem.innerHTML = "&nbsp; <i class='fas fa-hand-rock'></i>";
+                    break;
+
+                case 2:
+                    elem.innerHTML = "&nbsp; <i class='fas fa-hand-scissors fa-rotate-90'></i>";
+                    break;
+
+                case 3:
+                    elem.innerHTML = "&nbsp; <i class='fas fa-hand-paper'></i>";
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
