@@ -4,9 +4,15 @@
 <head>
     <link rel="stylesheet" href="../css/all.min.css">
     <style>
+        div {
+            border: 1px solid black;
+            width: 243px;
+        }
+
         .numbutton,
         .calcbutton {
-            padding: 22px;
+            width: 56.5px;
+            height: 50px;
         }
 
         #result,
@@ -29,35 +35,36 @@
 </head>
 
 <body>
-    <!-- 연산 결과 창 -->
-    <input type="text" id="result" readonly>
-    <input type="text" id="result1" readonly>
-    <p id="collect" hidden></p>
-    <p id="collect1" hidden></p>
-    <br>
+    <div>
+        <!-- 연산 결과 창 -->
+        <input type="text" id="result" readonly>
+        <input type="text" id="result1" readonly>
+        <p id="collect" hidden></p>
+        <p id="collect1" hidden></p>
+        <br>
 
-    <!-- 계산기 버튼 -->
-    <button onclick="btn7()" id="button7" class="numbutton">7</button>
-    <button onclick="btn8()" id="button8" class="numbutton">8</button>
-    <button onclick="btn9()" id="button9" class="numbutton">9</button>
-    <button onclick="btndivide()" id="dividebutton" class="calcbutton"><i class="fas fa-divide"></i></button>
+        <!-- 계산기 버튼 -->
+        <button onclick="btn7()" id="button7" class="numbutton">7</button>
+        <button onclick="btn8()" id="button8" class="numbutton">8</button>
+        <button onclick="btn9()" id="button9" class="numbutton">9</button>
+        <button onclick="btndivide()" id="dividebutton" class="calcbutton"><i class="fas fa-divide"></i></button>
 
-    <br>
-    <button onclick="btn4()" id="button4" class="numbutton">4</button>
-    <button onclick="btn5()" id="button5" class="numbutton">5</button>
-    <button onclick="btn6()" id="button6" class="numbutton">6</button>
-    <button onclick="btntimes()" id="timesbutton" class="calcbutton"><i class="fas fa-times"></i></button>
-    <br>
-    <button onclick="btn1()" id="button1" class="numbutton">1</button>
-    <button onclick="btn2()" id="button2" class="numbutton">2</button>
-    <button onclick="btn3()" id="button3" class="numbutton">3</button>
-    <button onclick="btnminus()" id="minusbutton" class="calcbutton"><i class="fas fa-minus"></i></button>
-    <br>
-    <button onclick="btn0()" id="button0" class="numbutton" style="width: 178px;">0</button>
-    <button onclick="btnplus()" id="plusbutton" class="calcbutton"><i class="fas fa-plus"></i></button>
-    <br>
-    <button onclick="processResult()" id="resultbtn" class="calcbutton"><i class="fas fa-equals"></i></button>
-
+        <br>
+        <button onclick="btn4()" id="button4" class="numbutton">4</button>
+        <button onclick="btn5()" id="button5" class="numbutton">5</button>
+        <button onclick="btn6()" id="button6" class="numbutton">6</button>
+        <button onclick="btntimes()" id="timesbutton" class="calcbutton"><i class="fas fa-times"></i></button>
+        <br>
+        <button onclick="btn1()" id="button1" class="numbutton">1</button>
+        <button onclick="btn2()" id="button2" class="numbutton">2</button>
+        <button onclick="btn3()" id="button3" class="numbutton">3</button>
+        <button onclick="btnminus()" id="minusbutton" class="calcbutton"><i class="fas fa-minus"></i></button>
+        <br>
+        <button onclick="btn0()" id="button0" class="numbutton" style="width: 180.5px;">0</button>
+        <button onclick="btnplus()" id="plusbutton" class="calcbutton"><i class="fas fa-plus"></i></button>
+        <br>
+        <button onclick="processResult()" id="resultbtn" class="calcbutton" style=""><i class="fas fa-equals"></i></button>
+    </div>
     <script>
         // 숫자 값을 모음
         var collector = [];
@@ -71,7 +78,7 @@
             return Number(a) / Number(b);
         }
         function times(a, b) {
-            console.log(a);
+            console.log(Number(a));
             console.log(Number(b));
             return Number(a) * Number(b);
         }
