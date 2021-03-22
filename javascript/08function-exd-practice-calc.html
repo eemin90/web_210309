@@ -31,6 +31,11 @@
         #result1 {
             border-top: none;
         }
+
+        #resultbtn{
+            position: relative;
+            left: 186px;
+        }
     </style>
 </head>
 
@@ -39,8 +44,9 @@
         <!-- 연산 결과 창 -->
         <input type="text" id="result" readonly>
         <input type="text" id="result1" readonly>
+
+        <!-- 입력한 숫자 저장해둘 곳 -->
         <p id="collect" hidden></p>
-        <p id="collect1" hidden></p>
         <br>
 
         <!-- 계산기 버튼 -->
@@ -63,113 +69,112 @@
         <button onclick="btn0()" id="button0" class="numbutton" style="width: 180.5px;">0</button>
         <button onclick="btnplus()" id="plusbutton" class="calcbutton"><i class="fas fa-plus"></i></button>
         <br>
-        <button onclick="processResult()" id="resultbtn" class="calcbutton" style=""><i class="fas fa-equals"></i></button>
+        <button onclick="processResult()" id="resultbtn" class="calcbutton"><i class="fas fa-equals"></i></button>
     </div>
     <script>
-        // 숫자 값을 모음
+        // /, *, -, + 기호 값을 모음 (계산 시 구분을 위해)
         var collector = [];
-        var collector1 = [];
-        var collector2 = [];
 
         // 값을 계산
         function divide(a, b) {
-            console.log(Number(a));
-            console.log(Number(b));
-            return Number(a) / Number(b);
+            console.log(a);
+            console.log(b);
+            return a / b;
         }
         function times(a, b) {
-            console.log(Number(a));
-            console.log(Number(b));
-            return Number(a) * Number(b);
+            console.log(a);
+            console.log(b);
+            return a * b;
         }
         function minus(a, b) {
-            console.log(Number(a));
-            console.log(Number(b));
-            return Number(a) - Number(b);
+            console.log(a);
+            console.log(b);
+            return a - b;
         }
         function plus(a, b) {
-            console.log(Number(a));
-            console.log(Number(b));
-            return Number(a) + Number(b);
+            console.log(a);
+            console.log(b);
+            return a + b;
         }
 
         // 버튼 눌렀을 때 id가 result인 요소(input)에 값을 표시
         function btn0() {
-            document.getElementById("result").value += 0;
+            document.getElementById("result1").value += "0";
         }
         function btn1() {
-            document.getElementById("result").value += 1;
+            document.getElementById("result1").value += "1";
         }
         function btn2() {
-            document.getElementById("result").value += 2;
+            document.getElementById("result1").value += "2";
         }
         function btn3() {
-            document.getElementById("result").value += 3;
+            document.getElementById("result1").value += "3";
         }
         function btn4() {
-            document.getElementById("result").value += 4;
+            document.getElementById("result1").value += "4";
         }
         function btn5() {
-            document.getElementById("result").value += 5;
+            document.getElementById("result1").value += "5";
         }
         function btn6() {
-            document.getElementById("result").value += 6;
+            document.getElementById("result1").value += "6";
         }
         function btn7() {
-            document.getElementById("result").value += 7;
+            document.getElementById("result1").value += "7";
         }
         function btn8() {
-            document.getElementById("result").value += 8;
+            document.getElementById("result1").value += "8";
         }
         function btn9() {
-            document.getElementById("result").value += 9;
+            document.getElementById("result1").value += "9";
         }
 
         function btndivide() {
-            collector1.push("/");
-
-            console.log("col: " + collector);
-            console.log("col1: " + collector1);
-            console.log("col2: " + collector2);
+            document.getElementById("collect").value = document.getElementById("result1").value;
+            document.getElementById("result1").value = "";
+            document.getElementById("result").value = document.getElementById("collect").value + " " + "/" + " ";
+            collector.push("/");
         }
         function btntimes() {
-            collector1.push("*");
-
-            console.log("col: " + collector);
-            console.log("col1: " + collector1);
-            console.log("col2: " + collector2);
+            document.getElementById("collect").value = document.getElementById("result1").value;
+            document.getElementById("result1").value = "";
+            document.getElementById("result").value = document.getElementById("collect").value + " " + "*" + " ";
+            collector.push("*");
         }
         function btnminus() {
-            collector1.push("-");
-
-            console.log("col: " + collector);
-            console.log("col1: " + collector1);
-            console.log("col2: " + collector2);
+            document.getElementById("collect").value = document.getElementById("result1").value;
+            document.getElementById("result1").value = "";
+            document.getElementById("result").value = document.getElementById("collect").value + " " + "-" + " ";
+            collector.push("-");
         }
         function btnplus() {
-            collector1.push("+");
-
-            console.log("col: " + collector);
-            console.log("col1: " + collector1);
-            console.log("col2: " + collector2);
+            document.getElementById("collect").value = document.getElementById("result1").value;
+            document.getElementById("result1").value = "";
+            document.getElementById("result").value = document.getElementById("collect").value + " " + "+" + " ";
+            collector.push("+");
         }
 
         // 계산 실행
         function processResult() {
+            var r = Number(document.getElementById("collect").value);
+            var r1 = Number(document.getElementById("result1").value);
             // "/, *, -, +" 버튼 중 제일 마지막에 누른 버튼의 값으로 계산 실행
-            if (collector1[collector1.length - 1] == "/") {
-                // divide
-                console.log(collector[0]);
-                document.getElementById("result").value = divide(collector, collector2); // 값 계산할때 어떻게 할지 고민해야 함. 위에 p 요소 2개에 담은걸로 계산할지??
-            } else if (collector1[collector1.length - 1] == "*") {
+            if (collector[collector.length - 1] == "/") {
+                // divide                
+                document.getElementById("result").value += document.getElementById("result1").value + " " + "=" + " ";
+                document.getElementById("result1").value = divide(r, r1);
+            } else if (collector[collector.length - 1] == "*") {
                 // times
-                document.getElementById("result").value = times(collector, collector2);
-            } else if (collector1[collector1.length - 1] == "-") {
+                document.getElementById("result").value += document.getElementById("result1").value + " " + "=" + " ";
+                document.getElementById("result1").value = times(r, r1);
+            } else if (collector[collector.length - 1] == "-") {
                 // minus
-                document.getElementById("result").value = minus(collector, collector2);
-            } else if (collector1[collector1.length - 1] == "+") {
+                document.getElementById("result").value += document.getElementById("result1").value + " " + "=" + " ";
+                document.getElementById("result1").value = minus(r, r1);
+            } else {
                 // plus
-                document.getElementById("result").value = plus(collector, collector2);
+                document.getElementById("result").value += document.getElementById("result1").value + " " + "=" + " ";
+                document.getElementById("result1").value = plus(r, r1);
             }
         }
     </script>
