@@ -18,6 +18,12 @@
         function voteable() {
             var age = document.querySelector("input").value;
             age = Number(age);
+            // if (age >= 20) {
+            //     document.getElementById("result").innerHTML = "투표 가능";
+            // }
+            // if (age < 20) {
+            //     document.getElementById("result").innerHTML = "투표 불가능";
+            // }
             if (age >= 20) {
                 document.getElementById("result").innerHTML = "투표 가능";
             } else {
