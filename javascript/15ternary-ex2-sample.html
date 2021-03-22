@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+        div {
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div onclick="change()"><i class="far fa-heart"></i></div>
+    
+    <script>
+        function change() {            
+            var i = document.querySelector("div>i");
+
+            // i.className이 far fa-heart면 fas fa-heart로,
+            // 아니면 far fa-heart로 변경하여 className 변수에 대입
+            var className = (i.className == "far fa-heart")
+                            ? "fas fa-heart"
+                            : "far fa-heart";
+            
+            // className 변수의 값을 i 변수의 className으로 대입하여 className값 변경
+            i.className = className;
+            console.log(className);
+        }
+    </script>
+</body>
+
+</html>
