@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <input type="text" id="input1" placeholder="1부터 100사이의 수를 입력해주세요.">
+
+    <br>
+
+    <button onclick="check()" id="btn1">확인</button>
+    <button onclick="reset()">초기화</button>
+
+    <h1 id="message"></h1>
+
+    <script>
+        // 페이지가 로딩되면서 무작위 computerNumber 생성
+        var computerNumber = Math.floor(Math.random() * 100) + 1;
+        // 생성된 computerNumber 확인용
+        console.log(computerNumber);
+
+        function check() {
+            var userNumber = document.getElementById("input1").value;
+            userNumber = Number(userNumber);
+
+            var txt = "";
+            // computerNumber와 userNumber 비교
+            // userNumber와 computerNumber가 같으면 "정답입니다"
+            // userNumber가 computerNumber보다 작으면 "더 큰 수를 입력해주세요"
+            // userNumber가 computerNumber보다 크면 "더 작은 수를 입력해주세요"
+
+            // 입력하는 숫자가 1보다 작거나, 100보다 클때는 오류메시지 발생하면서 입력한 숫자 초기화
+            // 1~100 사이의 숫자를 입력하면 정상 작동
+            if (userNumber < 1 || userNumber > 100) {
+                alert("1에서 100사이의 수를 입력해주세요!");
+                document.getElementById("input1").value = "";
+                console.log(userNumber);
+            } else {
+                if (userNumber == computerNumber) {
+                    txt = "정답입니다";
+                    document.getElementById("btn1").disabled = true; // 정답을 맞추면 확인 버튼 비활성화로 초기화 버튼 클릭 유도
+                } else if (userNumber < computerNumber) {
+                    txt = "더 큰 수를 입력해주세요";
+                } else {
+                    txt = "더 작은 수를 입력해주세요";
+                }
+            }
+
+            document.getElementById("message").innerHTML = txt;
+        }
+
+        function reset() {
+            // 초기화 버튼을 눌렀을 때 computerNumber 새로 생성, 확인 버튼 활성화, 입력한 숫자 초기화, 정답여부 내용 초기화
+            computerNumber = Math.floor(Math.random() * 100) + 1;
+            console.log(computerNumber);
+            document.getElementById("btn1").disabled = false;
+            document.getElementById("input1").value = "";
+            document.getElementById("message").innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>
