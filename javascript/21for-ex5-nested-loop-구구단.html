@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p id="result"></p>
+
+    <script>
+        var res = "";
+        // 2단부터 9단까지 출력
+        for (var dan = 2; dan <= 9; dan++) {
+            console.log(dan + "단");
+
+            for (var num = 1; num <= 9; num++) {
+                res = dan + "X" + num + "=" + (dan * num) + "<br>";
+                console.log(res);
+                document.getElementById("result").innerHTML = res;
+            }
+        }
+    </script>
+</body>
+
+</html>
