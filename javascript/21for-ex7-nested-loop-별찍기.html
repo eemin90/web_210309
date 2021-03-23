@@ -21,8 +21,9 @@
     <div id="result4"></div>
     <script>
         var txt = "";
-        for (var i = 0; i < 5; i++) {
-            for (var j = 0; j <= i; j++) {
+
+        for (var i = 0; i < 5; i++) { // 0, 1, 2, 3, 4
+            for (var j = 0; j <= i; j++) { // i0 j0*, i1 j0* j1*, i2 j0* j1* j2*, i3 j0* j1* j2* j3*, i4 j0* j1* j2* j3* j4* (*, **, ***, ****, *****)
                 txt += "*"
             }
             txt += "<br>";
@@ -39,8 +40,8 @@
         */
         txt = "";
 
-        for (i = 0; i < 5; i++) {
-            for (j = 5; j > i; j--) {
+        for (i = 0; i < 5; i++) { // 0, 1, 2, 3, 4
+            for (j = 5; j > i; j--) { // i0 j5* j4* j3* j2* j1*, i1 j5* j4* j3* j2*, i2 j5* j4* j3*, i3 j5* j4*, i4 j5* (*****, ****, ***, **, *)
                 txt += "*";
             }
             txt += "<br>";
@@ -58,12 +59,11 @@
         */
         txt = "";
 
-        for (i = 0; i < 5; i++) {
-            for (var k = 0; k < i; k++) {
+        for (i = 0; i < 5; i++) { // 0, 1, 2, 3, 4
+            for (var k = 0; k < i; k++) { // i0, i1 k0" ", i2 k0" " k1" ", i3 k0" " k1" " k2" ", i4 k0" " k1" " k2" " k3" " (, ,  ,   ,    )
                 txt += "&nbsp;";
             }
-
-            for (j = 5; j > i; j--) {
+            for (j = 5; j > i; j--) {  // i0 j5* j4* j3* j2* j1*, i1 j5* j4* j3* j2*, i2 j5* j4* j3*, i3 j5* j4*, i4 j5* (*****, ****, ***, **, *)
                 txt += "*";
             }
             txt += "<br>";
@@ -79,6 +79,7 @@
         
         */
         txt = "";
+
         for (i = 0; i < 5; i++) {
             for (k = 0; k < (4-i); k++) {
                 txt += "&nbsp;";
