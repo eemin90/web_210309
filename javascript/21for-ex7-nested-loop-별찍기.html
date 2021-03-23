@@ -5,6 +5,8 @@
 <style>
     * {
         font-family: monospace;
+        font-size: 50px;
+        font-weight: bold;
     }
 </style>
 </head>
@@ -12,8 +14,16 @@
     <div id="result"></div>
 
     <script>
+        var txt = "";
+
         // 삼각형 모양으로 별 찍기
-        
+        for (var i = 1; i <= 5; i++) {
+            for (var j = 1; j <= i; j++) { // i가 1: 1번 반복, 2: 2번 반복.....
+                txt += "*";
+            }
+            txt += "<br>";
+        }
+        document.getElementById("result").innerHTML = txt;
     </script>
 </body>
 </html>
