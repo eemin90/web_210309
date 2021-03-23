@@ -32,7 +32,7 @@
             border-top: none;
         }
 
-        #resultbtn{
+        #resultbtn {
             position: relative;
             left: 186px;
         }
@@ -47,6 +47,7 @@
 
         <!-- 입력한 숫자 저장해둘 곳 -->
         <p id="collect" hidden></p>
+        <p id="collect1" hidden></p>
         <br>
 
         <!-- 계산기 버튼 -->
@@ -72,8 +73,10 @@
         <button onclick="processResult()" id="resultbtn" class="calcbutton"><i class="fas fa-equals"></i></button>
     </div>
     <script>
-        // /, *, -, + 기호 값을 모음 (계산 시 구분을 위해)
-        var collector = [];
+        // 연산자 및 숫자 저장
+        var collector = []; // 연산자 저장
+        var collector1 = []; // 숫자 저장
+        var collector2 = []; // 연산자 버튼 누른 이후 숫자 저장
 
         // 값을 계산
         function divide(a, b) {
@@ -97,42 +100,76 @@
             return a + b;
         }
 
-        // 버튼 눌렀을 때 id가 result인 요소(input)에 값을 표시
+        // 버튼 눌렀을 때 collector1 배열에 값을 추가
         function btn0() {
-            document.getElementById("result1").value += "0";
+            collector1.push(0);
+            console.log(collector1);
         }
         function btn1() {
-            document.getElementById("result1").value += "1";
+            collector1.push(1);
+            console.log(collector1);
         }
         function btn2() {
-            document.getElementById("result1").value += "2";
+            collector1.push(2);
+            console.log(collector1);
         }
         function btn3() {
-            document.getElementById("result1").value += "3";
+            collector1.push(3);
+            console.log(collector1);
         }
         function btn4() {
-            document.getElementById("result1").value += "4";
+            collector1.push(4);
+            console.log(collector1);
         }
         function btn5() {
-            document.getElementById("result1").value += "5";
+            collector1.push(5);
+            console.log(collector1);
         }
         function btn6() {
-            document.getElementById("result1").value += "6";
+            collector1.push(6);
+            console.log(collector1);
         }
         function btn7() {
-            document.getElementById("result1").value += "7";
+            collector1.push(7);
+            console.log(collector1);
         }
         function btn8() {
-            document.getElementById("result1").value += "8";
+            collector1.push(8);
+            console.log(collector1);
         }
         function btn9() {
+            collector1.push(9);
+            console.log(collector1);
             document.getElementById("result1").value += "9";
         }
 
         function btndivide() {
-            document.getElementById("collect").value = document.getElementById("result1").value;
+            var arr = "";
+
+            for (var i = 0; i < collector1.length; i++) {
+                arr += collector1[i];
+                console.log(arr);
+            }
+
+            document.getElementById("collect").value = arr;
+            console.log(document.getElementById("collect").value);
+
             document.getElementById("result1").value = "";
+
             document.getElementById("result").value = document.getElementById("collect").value + " " + "/" + " ";
+
+            if (collector[collector.length - 1] == "/") {
+                var r = Number(document.getElementById("collect").value);
+                var r1 = Number(document.getElementById("result1").value);
+                var res = document.getElementById("result").value;
+                var res1 = Number(res.slice(-res.length, -3));
+                
+                console.log(res1);
+                document.getElementById("result1").value = divide(res1 , r1);
+                collector1.splice(0, collector1.length);
+                console.log(collector1.length);
+            }
+
             collector.push("/");
         }
         function btntimes() {
@@ -163,6 +200,8 @@
                 // divide                
                 document.getElementById("result").value += document.getElementById("result1").value + " " + "=" + " ";
                 document.getElementById("result1").value = divide(r, r1);
+                collector1.splice(0, collector1.length);
+                console.log(collector1.length);
             } else if (collector[collector.length - 1] == "*") {
                 // times
                 document.getElementById("result").value += document.getElementById("result1").value + " " + "=" + " ";
