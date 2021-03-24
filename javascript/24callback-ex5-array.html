@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+
+</style>
+</head>
+<body>
+    <script>
+        var a = 3;
+        var b = "hello";
+
+        var c = [5, 8, 0];
+        console.log(c.length); // 3
+
+        var d = [];
+        console.log(d.length); // 0
+
+        d.push(33);
+        console.log(d.length); // 1
+
+        console.log(c[0]); // 5
+        console.log(d[0]); // 33
+
+        d.push(44);
+        console.log(d[1]); // 44
+        console.log(d.length); // 2
+
+        console.log("---------------------------------------");
+
+        for (var i = 0; i < c.length; i++) {
+            console.log(c[i]); // 5, 8, 0
+        }
+
+        console.log("---------------------------------------");
+
+        c.forEach(function (item, index) {
+            console.log(index + "의 값은 " + item);
+        })
+
+        console.log("---------------------------------------");
+        
+        var cb = function cb(item, index) {
+            console.log(index + "의 값은 " + item);
+        }
+
+        c.forEach(cb);
+    </script>
+</body>
+</html>
