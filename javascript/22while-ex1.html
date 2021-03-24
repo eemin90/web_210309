@@ -13,11 +13,18 @@
         console.log("statement1");
 
         var a = 3;
+        var b = 3;
         while (a > 0) {
             console.log("반복할 명령문1");
             console.log("반복할 명령문2");
-
-            a--;
+            while (b > 0) {
+                console.log("반복할 명령문1-1");
+                console.log("반복할 명령문2-1");
+                b--;
+                console.log(b);
+            }
+            a--;            
+            b = 3;
         }
 
         console.log("다음 statement2");
