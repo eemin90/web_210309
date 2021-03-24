@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+
+</style>
+</head>
+<body>
+    <script>
+        function myfunc1(b) {
+            b();
+        }
+
+        var f1 = function () {
+            console.log("f1 function");
+        }
+
+        f1();
+        myfunc1(f1); // f1 부분을 콜백이라고 함
+    </script>
+</body>
+</html>
