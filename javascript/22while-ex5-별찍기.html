@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+        * {
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+    <hr>
+    <!-- #result$@2*3 -->
+    <div id="result2"></div>
+    <hr>
+    <div id="result3"></div>
+    <hr>
+    <div id="result4"></div>
+    <script>        
+    /*
+        result
+        *
+        **
+        ***
+        ****
+        *****
+    */
+        var txt = "";
+
+        // for (var i = 0; i < 5; i++) { // 0, 1, 2, 3, 4
+        //     for (var j = 0; j <= i; j++) { // i0 j0*, i1 j0* j1*, i2 j0* j1* j2*, i3 j0* j1* j2* j3*, i4 j0* j1* j2* j3* j4* (*, **, ***, ****, *****)
+        //         txt += "*"
+        //     }
+        //     txt += "<br>";
+        // }
+        var a = 0;
+        var b = 0;
+        while (a < 5) { // 0, 1, 2, 3, 4
+            while (b <= a) { // a0 b0, a1 b0 b1, a2 b0 b1 b2, a3 b0 b1 b2 b3, a4 b0 b1 b2 b3 b4
+                txt += "*";
+                b++;
+            }
+            txt += "<br>";
+            a++;
+            b = 0;
+        }
+        document.getElementById("result").innerHTML = txt;
+
+    /*
+        result2
+        *****
+        ****
+        ***
+        **
+        *
+    */
+        txt = "";
+
+        // for (i = 0; i < 5; i++) { // 0, 1, 2, 3, 4
+        //     for (j = 5; j > i; j--) { // i0 j5* j4* j3* j2* j1*, i1 j5* j4* j3* j2*, i2 j5* j4* j3*, i3 j5* j4*, i4 j5* (*****, ****, ***, **, *)
+        //         txt += "*";
+        //     }
+        //     txt += "<br>";
+        // }
+        var a = 0;
+        var b = 4;
+        while (a < 5) { // 0, 1, 2, 3, 4
+            while (b >= a) { // a0 b4 b3 b2 b1 b0, a1 b4 b3 b2 b1, a2 b4 b3 b2, a3 b4 b3, a4 b4
+                txt += "*";
+                b--;
+            }
+            txt += "<br>";
+            a++;
+            b = 4;
+        }
+        document.getElementById("result2").innerHTML = txt;
+
+    /*        
+        result3
+        *****
+         ****
+          ***
+           ** 
+            *
+    */
+        txt = "";
+
+        // for (i = 0; i < 5; i++) { // 0, 1, 2, 3, 4
+        //     for (var k = 0; k < i; k++) { // i0, i1 k0" ", i2 k0" " k1" ", i3 k0" " k1" " k2" ", i4 k0" " k1" " k2" " k3" " (, ,  ,   ,    )
+        //         txt += "&nbsp;";
+        //     }
+        //     for (j = 5; j > i; j--) {  // i0 j5* j4* j3* j2* j1*, i1 j5* j4* j3* j2*, i2 j5* j4* j3*, i3 j5* j4*, i4 j5* (*****, ****, ***, **, *)
+        //         txt += "*";
+        //     }
+        //     txt += "<br>";
+        // }
+        var a = 0;
+        var b = 0;
+        var c = 4;
+        while (a < 5) { // 0, 1, 2, 3, 4
+            while (b < a) { // a0, a1 b0, a2 b0 b1, a3 b0 b1 b2, a4 b0 b1 b2 b3
+                txt += "&nbsp;";
+                b++;
+            }
+            while (c >= a) { // a0 c4 c3 c2 c1 c0, a1 c4 c3 c2 c1, a2 c4 c3 c2, a3 c4 c3, a4 c4
+                txt += "*";
+                c--;
+            }
+            txt += "<br>";
+            b = 0;
+            c = 4;
+            a++;
+        }
+        document.getElementById("result3").innerHTML = txt; // (*****, &nbsp;****, &nbsp;&nbsp;***, &nbsp;&nbsp;&nbsp;**, &nbsp;&nbsp;&nbsp;&nbsp;*)
+
+    /*
+        result4
+            *
+           **
+          ***
+         ****
+        *****        
+    */
+        txt = "";
+
+        // for (i = 0; i < 5; i++) { // 0, 1, 2, 3, 4
+        //     for (k = 4; k > i; k--) { // i0 k4" " k3" " k2" " k1" ", i1 k4" " k3" " k2" ", i2 k4" " k3" ", i3 k4" ", i4 (    ,   ,  , ,)
+        //         txt += "&nbsp;";
+        //     }
+        //     for (j = 0; j <= i; j++) { // i0 j0*, i1 j0* j1*, i2 j0* j1* j2*, i3 j0* j1* j2* j3*, i4 j0* j1* j2* j3* j4* (*, **, ***, ****, *****)
+        //         txt += "*";
+        //     }
+        //     txt += "<br>";
+        // }
+        var a = 0;
+        var b = 4;
+        var c = 0;
+        while (a < 5) { // 0, 1, 2, 3, 4
+            while (b > a) { // a0 b4 b3 b2 b1, a1 b4 b3 b2, a2 b4 b3, a3 b4, a4
+                txt += "&nbsp;";
+                b--;
+            }
+            while (c <= a) { // a0 c0, a1 c0 c1, a2 c0 c1 c2, a3 c0 c1 c2 c3, a4 c0 c1 c2 c3 c4
+                txt += "*";
+                c++;
+            }
+            txt += "<br>";
+            b = 4;
+            c = 0;
+            a++;
+        }
+        document.getElementById("result4").innerHTML = txt; // (&nbsp;&nbsp;&nbsp;&nbsp;*, &nbsp;&nbsp;&nbsp;**, &nbsp;&nbsp;***, &nbsp;****, *****)
+    </script>
+</body>
+
+</html>
