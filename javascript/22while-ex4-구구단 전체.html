@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/all.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p id="result"></p>
+
+    <script>
+        var res = "";        
+
+        // for문 ver.
+        // 2단부터 9단까지 출력
+        // for (var dan = 2; dan <= 9; dan++) { // 한번 돌때
+        //     console.log(dan + "단");
+        //     res += dan + "단" + "<br>";
+
+        //     for (var num = 1; num <= 9; num++) { // 여기서 num <= 9; 조건까지 다돌고(2단) 다시 위 for문 가서 다음 조건(3단)가지고 num <= 9; 돌고 반복!
+        //         res += dan + "X" + num + "=" + (dan * num) + "<br>";
+        //         console.log(dan + "X" + num + "=" + (dan * num));                
+        //     }
+        // }
+
+
+        // while문 ver.
+        var dan = 2;
+        var num = 1;
+        while (dan <= 9) {            
+            while (num <= 9) {
+                res += dan + "X" + num + "=" + (dan * num) + "<br>";
+                num++;
+            }
+            dan++;
+            num = 1; // num을 다시 원래값(1)으로 초기화 시켜야 안의 while문이 다시 반복됨
+        }
+
+        //최종 누적 결과 출력
+        document.getElementById("result").innerHTML = res;
+    </script>
+</body>
+
+</html>
