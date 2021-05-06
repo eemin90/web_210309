@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+
+</style>
+<script>
+    $(document).ready(function () {
+        $("#btn1").on("click", function () {
+            $("p").fadeIn();
+        });
+
+        $("#btn2").on("click", function () {
+            $("p").fadeOut();
+        });
+
+        $("#btn3").on("click", function () {
+            $("p").fadeToggle();
+        });
+
+        $("#btn4").on("click", function () {
+            $("p").fadeTo("fast", 0.3);
+        });
+    });
+</script>
+</head>
+<body>
+    <button id="btn1">fade in</button>
+    <button id="btn2">fade out</button>
+    <button id="btn3">fade toggle</button>
+    <button id="btn4">fade to</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aspernatur expedita illum, eligendi saepe inventore architecto sunt natus, distinctio dolorum quidem excepturi sequi reiciendis, possimus obcaecati nihil velit itaque. In?</p>
+</body>
+</html>
