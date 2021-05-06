@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.min.css">
+<style>
+
+</style>
+</head>
+<body>
+    <script>
+        var arr1 = [7, 55, 3, 9, 14, 0, 4];
+
+        arr1.sort(function (a, b) { // number를 정렬하기 위해서는 sort메소드에 callback함수를 이용해야 한다.
+            return a - b;
+        });
+
+        for (var i = 0; i < arr1.length; i++) {
+            console.log(arr1[i]);
+        }
+    </script>
+</body>
+</html>
